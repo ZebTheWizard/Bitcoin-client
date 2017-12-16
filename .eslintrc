@@ -1,0 +1,24 @@
+{
+  extends: standard,
+  env: {
+    browser: true,
+    node: true
+  },
+
+  globals: {
+    React: true
+  },
+  plugins: [
+    react,
+    html
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+  rules: {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  }
+}

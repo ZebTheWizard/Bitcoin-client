@@ -110,6 +110,20 @@ module.exports = emptyFunction;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+if (false) {
+  module.exports = require('./cjs/react.production.min.js');
+} else {
+  module.exports = __webpack_require__(9);
+}
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -165,7 +179,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -231,20 +245,6 @@ if (true) {
 }
 
 module.exports = warning;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-if (false) {
-  module.exports = require('./cjs/react.production.min.js');
-} else {
-  module.exports = __webpack_require__(9);
-}
-
 
 /***/ }),
 /* 4 */
@@ -381,8 +381,8 @@ module.exports = emptyObject;
 
 
 if (true) {
-  var invariant = __webpack_require__(1);
-  var warning = __webpack_require__(2);
+  var invariant = __webpack_require__(2);
+  var warning = __webpack_require__(3);
   var ReactPropTypesSecret = __webpack_require__(10);
   var loggedTypeFailures = {};
 }
@@ -436,7 +436,8 @@ module.exports = checkPropTypes;
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+__webpack_require__(8);
+module.exports = __webpack_require__(26);
 
 
 /***/ }),
@@ -445,19 +446,19 @@ module.exports = __webpack_require__(8);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__example__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Note__ = __webpack_require__(25);
 
 
 
 
 // this is imported from src/react/example.jsx
-var example = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__example__["a" /* default */], { name: 'John' });
+var note = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Note__["a" /* default */], null);
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(example, document.getElementById('app'));
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(note, document.getElementById('app'));
 
 /***/ }),
 /* 9 */
@@ -483,8 +484,8 @@ if (true) {
 
 var _assign = __webpack_require__(4);
 var emptyObject = __webpack_require__(5);
-var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var invariant = __webpack_require__(2);
+var warning = __webpack_require__(3);
 var emptyFunction = __webpack_require__(0);
 var checkPropTypes = __webpack_require__(6);
 
@@ -1909,9 +1910,9 @@ if (true) {
   (function() {
 'use strict';
 
-var React = __webpack_require__(3);
-var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var React = __webpack_require__(1);
+var invariant = __webpack_require__(2);
+var warning = __webpack_require__(3);
 var ExecutionEnvironment = __webpack_require__(13);
 var _assign = __webpack_require__(4);
 var emptyFunction = __webpack_require__(0);
@@ -17810,9 +17811,11 @@ module.exports = camelize;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -17822,76 +17825,107 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Example = function (_React$Component) {
-  _inherits(Example, _React$Component);
+var Note = function (_React$Component) {
+  _inherits(Note, _React$Component);
 
-  function Example(props) {
-    _classCallCheck(this, Example);
+  function Note(props) {
+    _classCallCheck(this, Note);
 
-    var _this = _possibleConstructorReturn(this, (Example.__proto__ || Object.getPrototypeOf(Example)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Note.__proto__ || Object.getPrototypeOf(Note)).call(this, props));
 
     _this.state = {
-      date: new Date()
+      notes: [],
+      name: '',
+      content: ''
     };
     return _this;
   }
 
-  _createClass(Example, [{
+  _createClass(Note, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
 
-      this.timer = setInterval(function () {
-        return _this2.changeDate();
-      }, 1000);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearInterval(this.timer);
-    }
-  }, {
-    key: 'changeDate',
-    value: function changeDate() {
-      this.setState({
-        date: new Date()
+      fetch('http://localhost:8000/api/note/fetch').then(function (response) {
+        return response.json();
+      }).then(function (_ref) {
+        var data = _ref.data;
+        return _this2.setState({ notes: data });
       });
+    }
+  }, {
+    key: 'createNote',
+    value: function createNote() {
+      var _this3 = this;
+
+      fetch('http://localhost:8000/api/note/create', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: this.state.name,
+          content: this.state.content
+        })
+      }).then(function (response) {
+        return response.json();
+      }).then(function (_ref2) {
+        var data = _ref2.data;
+        return _this3.setState({ notes: [].concat(_toConsumableArray(_this3.state.notes), [data]) });
+      });
+    }
+  }, {
+    key: 'model',
+    value: function model(prop, e) {
+      var tmp = {};
+      tmp[prop] = e.target.value;
+      this.setState(tmp);
     }
   }, {
     key: 'render',
     value: function render() {
+      var noteHTML = this.state.notes.map(function (note) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'note', key: note.uid },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'name' },
+            note.name
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'content' },
+            note.content
+          )
+        );
+      });
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        null,
+        { className: 'notes' },
+        noteHTML,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.name, onChange: this.model.bind(this, 'name'), placeholder: 'name' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.content, onChange: this.model.bind(this, 'content'), placeholder: 'content' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h1',
-          null,
-          'Hello, ',
-          this.props.name
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h2',
-          null,
-          'This is an example.'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'p',
-          null,
-          'The time is currently: ',
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'strong',
-            null,
-            this.state.date.toLocaleTimeString()
-          )
+          'button',
+          { onClick: this.createNote.bind(this), disabled: !this.state.name || !this.state.content },
+          'New Note'
         )
       );
     }
   }]);
 
-  return Example;
+  return Note;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["a"] = (Example);
+/* harmony default export */ __webpack_exports__["a"] = (Note);
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

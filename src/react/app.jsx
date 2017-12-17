@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Example from './example'
+import Note from './Note'
 
 // this is imported from src/react/example.jsx
-const example = <Example name="John" />
+const note = <Note />
 
 ReactDOM.render(
-  example,
+  note,
   document.getElementById('app')
 )

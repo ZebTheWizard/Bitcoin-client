@@ -1,0 +1,26 @@
+.root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.note {
+  padding: 0.5rem;
+  border-radius: 0.1rem;
+  border: 1px solid #ddd;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  width: 25%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: inline-block;
+}
+
+.note .name {
+  text-align: center;
+  font-weight: bold;
+}
+

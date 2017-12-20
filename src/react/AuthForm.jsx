@@ -44,10 +44,25 @@ class AuthForm extends React.Component {
     let forms = {}
 
     forms.login = (
-      <div id="loginform">
-        <input type="email" placeholder="email" value={this.state.email} onChange={this.model.bind(this, 'email')}/>
-        <input type="password" placeholder="password" value={this.state.password} onChange={this.model.bind(this, 'password')}/>
-      </div>
+      <form className="form-horizontal">
+        <div className="form-group">
+          <div className="col-3">
+            <label className="form-label" htmlFor="input-example-1">Email</label>
+          </div>
+          <div className="col-9">
+            <input className="form-input" type="email" placeholder="john@example.com" value={this.state.email} onChange={this.model.bind(this, 'email')}/>
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="col-3">
+            <label className="form-label" htmlFor="input-example-1">Password</label>
+          </div>
+          <div className="col-9">
+            <input className="form-input" type="password" placeholder="Password" value={this.state.password} onChange={this.model.bind(this, 'password')}/>
+          </div>
+        </div>
+      </form>
     )
 
     forms.signup = (
@@ -62,7 +77,9 @@ class AuthForm extends React.Component {
     return (
       <div className="AuthForm">
         {forms[this.state.type]}
-        <button onClick={this.login.bind(this)} >{this.state.type}</button>
+        <div className="form-group clearfix">
+          <button className="btn col-4 float-right " onClick={this.login.bind(this)} >{this.state.type}</button>
+        </div>
         {this.state.status}
       </div>
     )

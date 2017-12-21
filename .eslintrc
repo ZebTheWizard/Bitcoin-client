@@ -1,5 +1,4 @@
 {
-  extends: standard,
   env: {
     browser: true,
     node: true
@@ -9,7 +8,6 @@
     React: true
   },
   plugins: [
-    react,
     html
   ],
   parserOptions: {
@@ -17,8 +15,8 @@
       jsx: true
     }
   },
-  rules: {
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
-  }
+  extends: [
+    'standard',
+    'plugin:vue/essential'
+  ]
 }

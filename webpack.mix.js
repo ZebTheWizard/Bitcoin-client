@@ -16,5 +16,5 @@ mix.webpackConfig({
   }
 })
 
-mix.react('src/react/app.jsx', 'dist/js')
+mix.js('src/app.js', 'dist/js')
   .sass('src/styles/app.scss', 'dist/css')

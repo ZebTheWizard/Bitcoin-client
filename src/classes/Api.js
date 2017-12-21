@@ -1,3 +1,4 @@
+/* global axios */
 class Api {
   /**
    * @param {object} settings the settings for the method.
@@ -20,7 +21,7 @@ class Api {
     credentials.password = settings.password
 
     return new Promise((resolve, reject) => {
-      window.axios.post(env.get().api + '/oauth/token', credentials).then(({data}) => {
+      axios.post(env.get().api + '/oauth/token', credentials).then(({data}) => {
         env.set('access_token', 'Bearer ' + data.access_token)
         env.set('refresh_token', data.refresh_token)
         resolve()

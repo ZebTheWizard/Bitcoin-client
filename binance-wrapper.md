@@ -1,5 +1,5 @@
 ## Getting Started
-```
+```coffee
 import Binance from '../classes/Binance'
 ```
 
@@ -29,7 +29,7 @@ Binance.fetch('klines', {
 
 `Binance.fetch` returns an array of objects. Each object will contain the following data.
 
-```ts
+```coffee
 {
   ignore: String,
   prices: {

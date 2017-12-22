@@ -1,7 +1,10 @@
+
+// import Binance from 'binance-api-node'
+// const Binance = require('binance-api-node')
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
-
+// const $coin = Binance()
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -19,6 +22,9 @@ function createWindow () {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+
+  // Binance stuff.
+  // console.log($coin)
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

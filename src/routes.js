@@ -1,6 +1,6 @@
 export default [
   {
     path: '/',
-    component: require('./pages/login.vue')
+    component: require('./pages/charts.vue')
   }
 ]
